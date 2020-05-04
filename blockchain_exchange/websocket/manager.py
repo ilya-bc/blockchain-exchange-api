@@ -11,6 +11,7 @@ class BlockchainWebsocketManager:
     def __init__(self):
         self._ws = None
         self._ws_connect_lock = Lock()
+        self._ws_message_handler = lambda x: x
 
     @property
     def ws(self) -> WebSocketApp:
@@ -31,6 +32,9 @@ class BlockchainWebsocketManager:
     @property
     def ws_connect_headers(self) -> list:
         return []
+
+    def set_ws_message_handler(self, handler: callable):
+        self._ws_message_handler = handler
 
     def send_json(self, message: dict) -> None:
         self.send(json.dumps(message))
@@ -94,6 +98,7 @@ class BlockchainWebsocketManager:
 
     def _on_ws_message_callback(self, ws: WebSocketApp, message: str):
         logging.info(message)
+        self._ws_message_handler(message)
 
     def _on_ws_open_callback(self, ws: WebSocketApp):
         logging.info(f"Established connection to {self.ws_uri}")
