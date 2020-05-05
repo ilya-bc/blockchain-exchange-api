@@ -44,7 +44,6 @@ class BlockchainWebsocket:
 
     def connect(self) -> None:
         if self._ws:
-            logging.info(f"You are already connected to {self.ws_uri}")
             return
         with self._ws_connect_lock:
             while not self._ws:
