@@ -7,7 +7,7 @@
 ## Table of Contents
 Generated with [DocToc](https://github.com/thlorenz/doctoc)
 
-Last Update: 2020-05-04
+Last Update: 2020-05-05
 
 - [Quick start](#quick-start)
   - [Prerequisites for trading](#prerequisites-for-trading)
@@ -38,7 +38,7 @@ Actual trading and accessing balance of your account [requires authentication](h
 
 1.  You should have an account at [blockchain.com | exchange](https://exchange.blockchain.com/)
 
-1.  Create API key [here](https://exchange.blockchain.com/settings/api) and store information.
+1.  Create API key [here](https://exchange.blockchain.com/settings/api) and store information. Note, you can have setup key with premissions `view` and `view & trade`.
 
 1.  You should receive an email asking you to activate API key.
 
