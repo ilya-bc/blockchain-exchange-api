@@ -1,4 +1,4 @@
-# Blockchain Exchange API
+# [Blockchain Exchange Python API](https://exchange.blockchain.com/api)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://exchange.blockchain.com/)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -73,20 +73,18 @@ logging.basicConfig(level=logging.INFO)
 
 client = BlockchainWebsocketClient()
 ```
-
+See our documentation for [API reference](https://ilya-bc.github.io/blockchain-exchange-api-docs/stable/index.html) and [gallery of examples](https://ilya-bc.github.io/blockchain-exchange-api-docs/stable/generated_sphinx_gallery/index.html) for more info.
 
 ## Demos
-|                               | Script :snake:   | Demo :movie_camera:    |
-|-------------------------------|----------|----------|
-| Listen to all public channels | [Click me](https://github.com/ilya-bc/blockchain-exchange-api/blob/master/examples/run-00-subscribe-to-public-channels.py) | [Click me](https://drive.google.com/open?id=1jw15dL1qMNJEGbnOsuhr6q0QQWhxLgjs) |
-| Create orders                 | [Click me](https://github.com/ilya-bc/blockchain-exchange-api/blob/master/examples/run-01-subscribe-to-trading-channel.py) | [Click me](https://drive.google.com/open?id=1GP4n_JosneEKd38OYPtAuo_fDhIKHmDL) |
+|                               | Demo :movie_camera: | Script :snake: | Script extended :scroll: |
+|-------------------------------|---------------------|----------------|--------------------------|
+| Listen to all public channels | [Click me](https://drive.google.com/open?id=1jw15dL1qMNJEGbnOsuhr6q0QQWhxLgjs) | [Click me](https://github.com/ilya-bc/blockchain-exchange-api/blob/master/examples/run-00-subscribe-to-public-channels.py) | [Click me](https://ilya-bc.github.io/blockchain-exchange-api-docs/stable/generated_sphinx_gallery/run-00-subscribe-to-public-channels.html) |
+| Create orders                 | [Click me](https://drive.google.com/open?id=1GP4n_JosneEKd38OYPtAuo_fDhIKHmDL) | [Click me](https://github.com/ilya-bc/blockchain-exchange-api/blob/master/examples/run-01-subscribe-to-trading-channel.py) | [Click me](https://ilya-bc.github.io/blockchain-exchange-api-docs/stable/generated_sphinx_gallery/run-01-subscribe-to-trading-channel.html) |
 
 [All Demos are here](https://drive.google.com/open?id=1DXx-EFS6c0jdJlWgg6X7uwhzYbscuL8d)
 
 ## TODO
-- [ ]   Docs
 - [ ]   Tests
-- [ ]   Handle disconnects from websocket
 - [ ]   Something weird is going on with unsubscribing from channels in bulk for the following ones:
 ```json
 [

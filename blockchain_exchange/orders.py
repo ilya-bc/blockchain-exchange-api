@@ -6,6 +6,21 @@ from blockchain_exchange.utils import pretty_print
 
 
 class Order:
+    """Base class for representing orders
+
+    .. note::
+        Although it is possible to use this class for creating orders, but
+        it lack of order specific validation checks.
+
+    Parameters
+    ----------
+    order_type
+    symbol
+    side
+    quantity
+    time_in_force
+    order_id
+    """
     def __init__(self, order_type: str, symbol: str, side: str, quantity: float, time_in_force: str, order_id: str = None):
         self.type = order_type
         self.symbol = symbol
@@ -16,10 +31,10 @@ class Order:
 
     def __repr__(self):
         class_name = self.__class__.__name__
-        return '%s(%s\n)' % (class_name, pretty_print(self.__dict__,
-                                                        offset=2, ),)
+        return '%s(%s\n)' % (class_name, pretty_print(self.__dict__, offset=2, ),)
 
     def to_json(self) -> Dict:
+        """Represent order as JSON dictionary"""
         return {
             "clOrdID": self.id,
             "symbol": self.symbol,
@@ -31,9 +46,11 @@ class Order:
 
     @property
     def is_valid(self) -> bool:
+        """Check if order has valid parameters"""
         return self.validate()
 
     def validate(self) -> bool:
+        """Validate order parameters"""
         is_valid = True
         if len(self.id) >= 20:
             is_valid = False
@@ -66,6 +83,16 @@ class Order:
 
 
 class MarketOrder(Order):
+    """Representation of **market** order
+
+    Parameters
+    ----------
+    symbol
+    side
+    quantity
+    time_in_force
+    order_id
+    """
     def __init__(self, symbol: str, side: str, quantity: float, time_in_force: str, order_id: str = None):
         super().__init__(order_type="market",
                          symbol=symbol,
@@ -81,8 +108,18 @@ class MarketOrder(Order):
         return super().validate()
 
 
-
 class LimitOrder(Order):
+    """Representation of **limit** order
+
+    Parameters
+    ----------
+    price
+    symbol
+    side
+    quantity
+    time_in_force
+    order_id
+    """
     def __init__(self, price: float, symbol: str, side: str, quantity: float, time_in_force: str, order_id: str = None):
         super().__init__(order_type="limit",
                          symbol=symbol,

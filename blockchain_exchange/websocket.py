@@ -7,6 +7,7 @@ from websocket import WebSocketApp
 
 
 class BlockchainWebsocket:
+    """Low level API to interact with Blockchain Exchange"""
     def __init__(self):
         self._ws = None
         self._ws_connect_lock = Lock()
@@ -14,35 +15,54 @@ class BlockchainWebsocket:
 
     @property
     def ws(self) -> WebSocketApp:
+        """Connection to blockchain exchange websocket"""
         return self._ws
 
     @property
     def ws_uri(self) -> str:
+        """URI of blockchain exchange websocket"""
         return "wss://ws.prod.blockchain.info/mercury-gateway/v1/ws"
 
     @property
     def ws_origin(self) -> str:
+        """Blockchain exchange websocket origin"""
         return "https://exchange.blockchain.com"
 
     @property
     def ws_connect_timeout_seconds(self) -> int:
+        """Wait for socket to connect before dropping connection"""
         return 5
 
     @property
     def ws_connect_headers(self) -> list:
+        """List of additional headers sent to blockchain exchange"""
         return []
 
     def set_ws_message_handler(self, handler: callable):
+        """Set method responsible for handling messages received from blockchain exchange"""
         self._ws_message_handler = handler
 
     def send_json(self, message: dict) -> None:
+        """Send message represented as python dictionary to blockchain exchange
+
+        Parameters
+        ----------
+        message : Dict
+        """
         self.send(json.dumps(message))
 
     def send(self, message: str) -> None:
+        """Send raw string message to blockchain exchange
+
+        Parameters
+        ----------
+        message : str
+        """
         self.connect()
         self.ws.send(message)
 
     def connect(self) -> None:
+        """Connect to blockchain exchange websocket"""
         if self._ws:
             return
         with self._ws_connect_lock:
@@ -52,6 +72,7 @@ class BlockchainWebsocket:
                     return
 
     def reconnect(self) -> None:
+        """Reconnect to blockchain exchange websocket"""
         if self._ws is not None:
             self._reconnect(self._ws)
 

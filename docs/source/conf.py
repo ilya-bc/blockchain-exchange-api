@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.abspath('../../'))
 # -- Project information -----------------------------------------------------
 
 # General information about the project.
-project = 'Blockchain Exchange API'
+project = 'Blockchain Exchange Python API'
 author = 'Ilya Kisil'
 year = datetime.now().year
 copyright = '2020 - {}, {}'.format(year, author)
@@ -165,12 +165,9 @@ except ModuleNotFoundError:
 
 
 # -- Configuration for converting markdown files to rST and including them in docs
-# try:
-#     import m2r
-#     extensions.append('m2r')
-#     source_suffix.append('.md')
-# except ModuleNotFoundError:
-#     pass
+# Usage: .. mdinclude:: path/to/markdown/file
+extensions.append('m2r.m2r')
+source_suffix.append('.md')
 
 
 # -- Options for HTML output -------------------------------------------------

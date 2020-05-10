@@ -1,0 +1,13 @@
+div.sphinxsidebarwrapper p.blurb {
+  font-family: Lato, sans-serif;
+}
+
+h1.logo {
+  font-family: Lato, sans-serif;
+  font-weight: normal;
+}
+
+div.sphinxsidebar li.toctree-l1 {
+  font-family: Lato, sans-serif;
+}
+

@@ -1,0 +1,7 @@
+-r requirements-test.txt
+
+doit
+green
+tox
+
+livereload

@@ -69,7 +69,7 @@ div.highlight pre{
 }
 
 /* Fix styling of autosummary tables */
-table.docutils tbody tr td:nth-child(1) p{
+table.docutils.longtable tbody tr td:nth-child(1) p{
     /*
         Don't show text (arguments) for class methods in methods summary table
         which are normally present in the first cell of each table row.

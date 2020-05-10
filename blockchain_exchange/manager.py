@@ -7,6 +7,7 @@ from blockchain_exchange.channels import ChannelFactory, Channel
 
 
 class ChannelManager:
+    """Class to manage connections to blockchain exchange channels"""
     def __init__(self):
         self._ws = BlockchainWebsocket()
         self._channels_factory = ChannelFactory()
@@ -18,15 +19,18 @@ class ChannelManager:
 
     @property
     def available_channel_names(self) -> List[str]:
-        return list(self._channels_factory.channels.keys())
+        """List of channel names this manager is responsible for"""
+        return list(self._channels.keys())
 
     def _encode_channel(self, name, channel_params: Dict) -> str:
+        """Custom channel UID"""
         encoding = f"{name}"
         for key in sorted(channel_params.keys()):
             encoding = f"{encoding}-{channel_params[key]}"
         return encoding
 
     def get_channel(self, name, **kwargs) -> Channel:
+        """Get connection to a channel of interest"""
         channel_id = self._encode_channel(name, kwargs)
         if channel_id in self._channels[name]:
             channel = self._channels[name][channel_id]
@@ -49,6 +53,7 @@ class ChannelManager:
         return channel
 
     def get_all_channels(self) -> List[Channel]:
+        """Get list of all opened connections to channels"""
         all_channels = []
         for channel_type, channels in self._channels.items():
             all_channels += [channel for channel in channels.values()]

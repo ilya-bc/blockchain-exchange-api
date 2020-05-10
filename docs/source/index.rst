@@ -1,6 +1,6 @@
-============================================
-Blockchain Exchange Python API documentation
-============================================
+==============================
+Blockchain Exchange Python API
+==============================
 
 Table of Contents
 =================

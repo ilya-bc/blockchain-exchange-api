@@ -2,6 +2,7 @@ from datetime import datetime
 
 
 def timestamp_to_datetime(ts: str) -> datetime:
+    """Convert UTC string to ``datetime``"""
     return datetime.strptime(ts, "%Y-%m-%dT%H:%M:%S.%fZ")
 
 
