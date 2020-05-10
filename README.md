@@ -7,15 +7,43 @@
 ## Table of Contents
 Generated with [DocToc](https://github.com/thlorenz/doctoc)
 
-Last Update: 2020-05-05
+Last Update: 2020-05-11
 
+- [Features](#features)
 - [Quick start](#quick-start)
   - [Prerequisites for trading](#prerequisites-for-trading)
-- [Features](#features)
 - [Demos](#demos)
 - [TODO](#todo)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Features
+-   Subscribe to all websocket channels available at [blockchain.com | exchage](https://exchange.blockchain.com/api/#websocket-api):
+    -   [Heartbeat](https://exchange.blockchain.com/api/#heartbeat) :hearts:
+    -   [Orderbook L2](https://exchange.blockchain.com/api/#l2-order-book) :blue_book:
+    -   [Orderbook L3](https://exchange.blockchain.com/api/#l3-order-book) :green_book:
+    -   [Prices](https://exchange.blockchain.com/api/#prices) :atm:
+    -   [Symbols](https://exchange.blockchain.com/api/#symbols) :symbols:
+    -   [Ticker](https://exchange.blockchain.com/api/#ticker) :chart_with_upwards_trend:
+    -   [Trades](https://exchange.blockchain.com/api/#trades) :currency_exchange:
+    -   [Trading](https://exchange.blockchain.com/api/#trading) :bank: :closed_lock_with_key:
+    -   [Balance](https://exchange.blockchain.com/api/#balances) :moneybag: :closed_lock_with_key:
+
+-   Subscription to new channels doesn't require client restart
+-   Create Market orders
+-   Create Limit orders
+
+All API is available through a websocket client:
+```python
+import logging
+from blockchain_exchange.client import BlockchainWebsocketClient
+
+logging.basicConfig(level=logging.INFO)
+
+client = BlockchainWebsocketClient()
+```
+See our documentation for [API reference](https://ilya-bc.github.io/blockchain-exchange-api-docs/stable/index.html) and [gallery of examples](https://ilya-bc.github.io/blockchain-exchange-api-docs/stable/generated_sphinx_gallery/index.html) for more info.
+
 
 ## Quick start
 -   Get source code
@@ -48,32 +76,6 @@ export BLOCKCHAIN_API_SECRET="__ENTER_YOUR_API_SECRET_HERE__"
 ```
 :fire: **Tip:** If you use `pipenv` then you can just put it into `.env` file (ignored by git) at the root of the cloned directory
 
-## Features
--   Subscribe to all websocket channels available at [blockchain.com | exchage](https://exchange.blockchain.com/api/#websocket-api):
-    -   [Heartbeat](https://exchange.blockchain.com/api/#heartbeat) :hearts:
-    -   [Orderbook L2](https://exchange.blockchain.com/api/#l2-order-book) :blue_book:
-    -   [Orderbook L3](https://exchange.blockchain.com/api/#l3-order-book) :green_book:
-    -   [Prices](https://exchange.blockchain.com/api/#prices) :atm:
-    -   [Symbols](https://exchange.blockchain.com/api/#symbols) :symbols:
-    -   [Ticker](https://exchange.blockchain.com/api/#ticker) :chart_with_upwards_trend:
-    -   [Trades](https://exchange.blockchain.com/api/#trades) :currency_exchange:
-    -   [Trading](https://exchange.blockchain.com/api/#trading) :bank: :closed_lock_with_key:
-    -   [Balance](https://exchange.blockchain.com/api/#balances) :moneybag: :closed_lock_with_key:
-
--   Subscription to new channels doesn't require client restart
--   Create Market orders
--   Create Limit orders
-
-All API is available though a websocket client:
-```python
-import logging
-from blockchain_exchange.client import BlockchainWebsocketClient
-
-logging.basicConfig(level=logging.INFO)
-
-client = BlockchainWebsocketClient()
-```
-See our documentation for [API reference](https://ilya-bc.github.io/blockchain-exchange-api-docs/stable/index.html) and [gallery of examples](https://ilya-bc.github.io/blockchain-exchange-api-docs/stable/generated_sphinx_gallery/index.html) for more info.
 
 ## Demos
 |                               | Demo :movie_camera: | Script :snake: | Script extended :scroll: |
