@@ -176,5 +176,10 @@ venv/
 Pipfile
 Pipfile.lock
 
+### Documentation with Sphinx
+docs/source/api/generated/
+docs/source/generated_sphinx_gallery/
+docs/source/generated_sphinx_gallery_backref/
+
 ### Custom dirs for temporary file ###
 tmp-ilya/

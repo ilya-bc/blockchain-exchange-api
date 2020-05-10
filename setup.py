@@ -26,6 +26,8 @@ def extras_requires():
             'sphinx>=2.1.2',
             'guzzle_sphinx_theme==0.7.11',
             'numpydoc==0.9.1',
+            'm2r>=0.2.1',
+            'sphinx-gallery==0.5.0',
         ]
     }
 
