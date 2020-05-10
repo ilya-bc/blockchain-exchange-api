@@ -9,6 +9,8 @@ Table of Contents
     :maxdepth: 2
 
     api/index
+    generated_sphinx_gallery/index
+
 
 
 Indices and Tables

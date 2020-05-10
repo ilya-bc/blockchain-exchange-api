@@ -1,3 +1,12 @@
+"""
+============================
+Subscribe to Public channels
+============================
+
+.. contents:: Table of Contents
+    :local:
+    :depth: 1
+"""
 import time
 import logging
 from pprint import pprint
@@ -32,9 +41,8 @@ def main():
     time.sleep(2)
     pprint(client.connected_channels)
 
-    while True:
-        time.sleep(7)
-        print(f"Last Heart Beat: {client.get_last_heartbeat()}")
+    time.sleep(7)
+    print(f"Last Heart Beat: {client.get_last_heartbeat()}")
 
 
 if __name__ == '__main__':

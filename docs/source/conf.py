@@ -146,22 +146,22 @@ elif _docstring_formatting == "numpydoc":
 
 # -- Configuration for 'sphinx-gallery' --------------------------------------
 # This extension is used in order to include example scripts into docs
-# try:
-#     import sphinx_gallery.gen_gallery
-#     extensions.append('sphinx_gallery.gen_gallery')
-#     sphinx_gallery_conf = {
-#         'examples_dirs': '../../examples',           # Relative path to example scripts
-#         'gallery_dirs': 'generated_sphinx_gallery',  # Relative path to where to save gallery generated output
-#         'filename_pattern': '/run_',                 # Regex for examples to be executed during docs build
-#         'download_all_examples': False,              # Disable download button of all scripts at once
-#         'remove_config_comments': True,              # Remove the comments with file-by-file configs
-#         'reference_url': {
-#             'blockchain_exchange': None,             # Add hyperlinks to the source code of used functions/classes to their matching online documentation
-#         },
-#         'doc_module': ('blockchain_exchange',)
-#     }
-# except ModuleNotFoundError:
-#     pass
+try:
+    import sphinx_gallery.gen_gallery
+    extensions.append('sphinx_gallery.gen_gallery')
+    sphinx_gallery_conf = {
+        'examples_dirs': '../../examples',           # Relative path to example scripts
+        'gallery_dirs': 'generated_sphinx_gallery',  # Relative path to where to save gallery generated output
+        'filename_pattern': '/run-',                 # Regex for examples to be executed during docs build
+        'download_all_examples': False,              # Disable download button of all scripts at once
+        'remove_config_comments': True,              # Remove the comments with file-by-file configs
+        'reference_url': {
+            'blockchain_exchange': None,             # Add hyperlinks to the source code of used functions/classes to their matching online documentation
+        },
+        'doc_module': ('blockchain_exchange',)
+    }
+except ModuleNotFoundError:
+    pass
 
 
 # -- Configuration for converting markdown files to rST and including them in docs

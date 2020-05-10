@@ -89,3 +89,34 @@ table.docutils tbody tr td{
     border-top: 1px solid #ccc;
     padding-top: 10px;
 }
+
+
+/* =========================== */
+/* Sphinx-gallery style tweaks */
+/* =========================== */
+
+/* Don't limit height of the captured output*/
+.sphx-glr-script-out .highlight pre{
+    max-height: none;
+}
+/* Make captured output of full width and don't overlap with text*/
+.sphx-glr-script-out .highlight{
+    margin: 0;
+    padding: 0;
+}
+.sphx-glr-script-out{
+    padding: 0 !important;
+}
+/* Download buttons side by side */
+.sphx-glr-footer{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.sphx-glr-download{
+    display: inline-block;
+    margin: 1em !important;
+    padding: 0;
+    width: auto;
+}

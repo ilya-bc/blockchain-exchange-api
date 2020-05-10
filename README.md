@@ -60,6 +60,7 @@ export BLOCKCHAIN_API_SECRET="__ENTER_YOUR_API_SECRET_HERE__"
     -   [Trading](https://exchange.blockchain.com/api/#trading) :bank: :closed_lock_with_key:
     -   [Balance](https://exchange.blockchain.com/api/#balances) :moneybag: :closed_lock_with_key:
 
+-   Subscription to new channels doesn't require client restart
 -   Create Market orders
 -   Create Limit orders
 
@@ -77,8 +78,8 @@ client = BlockchainWebsocketClient()
 ## Demos
 |                               | Script :snake:   | Demo :movie_camera:    |
 |-------------------------------|----------|----------|
-| Listen to all public channels | [Click me](https://github.com/ilya-bc/blockchain-exchange-api/blob/master/examples/00-subscribe_to_public-channels.py) | [Click me](https://drive.google.com/open?id=1jw15dL1qMNJEGbnOsuhr6q0QQWhxLgjs) |
-| Create orders                 | [Click me](https://github.com/ilya-bc/blockchain-exchange-api/blob/master/examples/01-subscribe-to-trading-channel.py) | [Click me](https://drive.google.com/open?id=1GP4n_JosneEKd38OYPtAuo_fDhIKHmDL) |
+| Listen to all public channels | [Click me](https://github.com/ilya-bc/blockchain-exchange-api/blob/master/examples/run-00-subscribe-to-public-channels.py) | [Click me](https://drive.google.com/open?id=1jw15dL1qMNJEGbnOsuhr6q0QQWhxLgjs) |
+| Create orders                 | [Click me](https://github.com/ilya-bc/blockchain-exchange-api/blob/master/examples/run-01-subscribe-to-trading-channel.py) | [Click me](https://drive.google.com/open?id=1GP4n_JosneEKd38OYPtAuo_fDhIKHmDL) |
 
 [All Demos are here](https://drive.google.com/open?id=1DXx-EFS6c0jdJlWgg6X7uwhzYbscuL8d)
 

@@ -1,3 +1,13 @@
+"""
+============================
+Subscribe to Trading Channel
+============================
+
+.. contents:: Table of Contents
+    :local:
+    :depth: 1
+"""
+
 import time
 import logging
 from pprint import pprint
