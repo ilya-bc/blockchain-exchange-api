@@ -13,6 +13,8 @@ Last Update: 2020-05-11
 - [Quick start](#quick-start)
   - [Prerequisites for trading](#prerequisites-for-trading)
 - [Demos](#demos)
+  - [Listen to all public channels](#listen-to-all-public-channels)
+  - [Create market and limit orders](#create-market-and-limit-orders)
 - [TODO](#todo)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -78,12 +80,23 @@ export BLOCKCHAIN_API_SECRET="__ENTER_YOUR_API_SECRET_HERE__"
 
 
 ## Demos
-|                               | Demo :movie_camera: | Script :snake: | Script extended :scroll: |
-|-------------------------------|---------------------|----------------|--------------------------|
-| Listen to all public channels | [Click me](https://drive.google.com/open?id=1jw15dL1qMNJEGbnOsuhr6q0QQWhxLgjs) | [Click me](https://github.com/ilya-bc/blockchain-exchange-api/blob/master/examples/run-00-subscribe-to-public-channels.py) | [Click me](https://ilya-bc.github.io/blockchain-exchange-api-docs/stable/generated_sphinx_gallery/run-00-subscribe-to-public-channels.html) |
-| Create orders                 | [Click me](https://drive.google.com/open?id=1GP4n_JosneEKd38OYPtAuo_fDhIKHmDL) | [Click me](https://github.com/ilya-bc/blockchain-exchange-api/blob/master/examples/run-01-subscribe-to-trading-channel.py) | [Click me](https://ilya-bc.github.io/blockchain-exchange-api-docs/stable/generated_sphinx_gallery/run-01-subscribe-to-trading-channel.html) |
 
-[All Demos are here](https://drive.google.com/open?id=1DXx-EFS6c0jdJlWgg6X7uwhzYbscuL8d)
+### Listen to all public channels
+-   [Script](https://github.com/ilya-bc/blockchain-exchange-api/blob/master/examples/run-00-subscribe-to-public-channels.py)
+-   [Script extended](https://ilya-bc.github.io/blockchain-exchange-api-docs/stable/generated_sphinx_gallery/run-00-subscribe-to-public-channels.html)
+
+[![asciicast listen to public channels](https://asciinema.org/a/329022.svg)](https://asciinema.org/a/329022)
+
+:pencil2: **Note:** There are `time.sleep(2)` between calling different methods, in order to be able to see intermediate results.
+
+### Create market and limit orders
+-   [Script](https://github.com/ilya-bc/blockchain-exchange-api/blob/master/examples/run-01-subscribe-to-trading-channel.py)
+-   [Script extened](https://ilya-bc.github.io/blockchain-exchange-api-docs/stable/generated_sphinx_gallery/run-01-subscribe-to-trading-channel.html)
+
+[![asciicast create market and limit orders](https://asciinema.org/a/329024.svg)](https://asciinema.org/a/329024)
+
+:pencil2: **Note:** Both orders got rejected (expected behaviour) because of invalid quantity and price being to big.
+
 
 ## TODO
 - [ ]   Tests

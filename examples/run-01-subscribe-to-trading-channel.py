@@ -43,7 +43,7 @@ def main():
     )
     time.sleep(2)
 
-    print("Submit Market Order")
+    print("Submit Limit Order")
     time.sleep(2)
     client.create_limit_order(
         order_id="my-order",
