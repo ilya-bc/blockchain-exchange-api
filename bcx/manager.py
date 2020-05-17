@@ -2,8 +2,8 @@ import json
 import logging
 from typing import Dict, List
 
-from blockchain_exchange.websocket import BlockchainWebsocket
-from blockchain_exchange.channels import ChannelFactory, Channel
+from bcx.websocket import BlockchainWebsocket
+from bcx.channels import ChannelFactory, Channel
 
 
 class ChannelManager:

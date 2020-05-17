@@ -2,7 +2,7 @@ import logging
 import secrets
 from typing import Dict
 
-from blockchain_exchange.utils import pretty_print
+from bcx.utils import pretty_print
 
 
 class Order:

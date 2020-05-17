@@ -1,0 +1,5 @@
+include README.md
+include LICENSE
+include Makefile
+recursive-include examples *
+recursive-include docs *

@@ -3,9 +3,9 @@ import logging
 from datetime import datetime
 from typing import List, Dict
 
-from blockchain_exchange.orders import Order, MarketOrder, LimitOrder
-from blockchain_exchange.manager import ChannelManager
-from blockchain_exchange.channels import Channel, TradingChannel, HeartbeatChannel, AuthChannel, PricesChannel
+from bcx.orders import Order, MarketOrder, LimitOrder
+from bcx.manager import ChannelManager
+from bcx.channels import Channel, TradingChannel, HeartbeatChannel, AuthChannel, PricesChannel
 
 
 class BlockchainWebsocketClient:

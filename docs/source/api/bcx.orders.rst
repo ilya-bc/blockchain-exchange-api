@@ -6,7 +6,7 @@ Module for creating orders
     :local:
     :depth: 2
 
-.. currentmodule:: blockchain_exchange.orders
+.. currentmodule:: bcx.orders
 
 .. autosummary::
     :nosignatures:

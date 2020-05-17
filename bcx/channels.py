@@ -2,9 +2,9 @@ import os
 import logging
 from typing import Dict, List
 
-from blockchain_exchange.utils import timestamp_to_datetime
-from blockchain_exchange.websocket import BlockchainWebsocket
-from blockchain_exchange.orders import Order
+from bcx.utils import timestamp_to_datetime
+from bcx.websocket import BlockchainWebsocket
+from bcx.orders import Order
 
 
 class Channel:

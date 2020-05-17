@@ -9,7 +9,7 @@ Module for interacting with exchange
 
 Exchange Client
 ===============
-.. currentmodule:: blockchain_exchange.client
+.. currentmodule:: bcx.client
 
 .. autosummary::
     :nosignatures:
@@ -21,7 +21,7 @@ Exchange Client
 
 Exchange Websocket Connection
 =============================
-.. currentmodule:: blockchain_exchange.websocket
+.. currentmodule:: bcx.websocket
 
 .. autosummary::
     :nosignatures:

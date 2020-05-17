@@ -3,15 +3,17 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-## Table of Contents
+Table of Contents
+-----------------
 Generated with [DocToc](https://github.com/thlorenz/doctoc)
 
-Last Update: 2020-05-11
+Last Update: 2020-05-17
 
 - [Features](#features)
-- [Quick start](#quick-start)
-  - [Prerequisites for trading](#prerequisites-for-trading)
+- [Installation](#installation)
+  - [For general use](#for-general-use)
+  - [For development](#for-development)
+- [Prerequisites for trading](#prerequisites-for-trading)
 - [Demos](#demos)
   - [Listen to all public channels](#listen-to-all-public-channels)
   - [Create market and limit orders](#create-market-and-limit-orders)
@@ -38,7 +40,7 @@ Last Update: 2020-05-11
 All API is available through a websocket client:
 ```python
 import logging
-from blockchain_exchange.client import BlockchainWebsocketClient
+from bcx.client import BlockchainWebsocketClient
 
 logging.basicConfig(level=logging.INFO)
 
@@ -47,23 +49,41 @@ client = BlockchainWebsocketClient()
 See our documentation for [API reference](https://ilya-bc.github.io/blockchain-exchange-api-docs/stable/index.html) and [gallery of examples](https://ilya-bc.github.io/blockchain-exchange-api-docs/stable/generated_sphinx_gallery/index.html) for more info.
 
 
-## Quick start
+## Installation
+In order to get started you should have **Python>=3.6** installed.
+
+### For general use
+This is as simple as running
+```bash
+pip install bcx
+```
+
+### For development
 -   Get source code
-```bash
-git clone git@github.com:ilya-bc/blockchain-exchange-api.git
-cd blockchain-exchange-api
-```
+    ```bash
+    git clone git@github.com:ilya-bc/blockchain-exchange-api.git
+    cd blockchain-exchange-api
+    ```
 
--   Install package. Since there are hundred ways to do that, a standardised way for this project is with `Makefile`. It will create virtual environment with `pipenv` and will use python 3.7 as its interpreter
-```bash
-# For general use
-make install
+-   Install package in editable mode. Since there are hundred ways to do that, a standardised way for this project is with `Makefile`. It will create virtual environment with `pipenv` based on `python==3.7` and install all necessary dependencies for development
+    ```bash
+    make install-dev
+    ```
 
-# For development
-make install-dev
-```
+-   If you don't have `pipenv` or prefer to manage a virtual environment using different tools, then you can use
+    ```bash
+    pip install -e '.[dev]'
+    ```
 
-### Prerequisites for trading
+-   In order to build documentation
+    ```bash
+    (cd docs && make html)
+    open docs/build/html/index.html
+    ```
+    :exclamation: **Important:** Building documentation will execute [example scripts](https://github.com/ilya-bc/blockchain-exchange-api/tree/master/examples), so be **extremely cautious** when writing sample scripts that make use of [trading channel](https://ilya-bc.github.io/blockchain-exchange-api-docs/stable/api/generated/blockchain_exchange.channels.TradingChannel.html).
+
+
+## Prerequisites for trading
 Actual trading and accessing balance of your account [requires authentication](https://exchange.blockchain.com/api/#authenticated-channels) with an API key. In order to get one:
 
 1.  You should have an account at [blockchain.com | exchange](https://exchange.blockchain.com/)

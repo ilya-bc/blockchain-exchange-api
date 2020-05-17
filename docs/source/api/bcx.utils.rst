@@ -6,7 +6,7 @@ Module with various utils
     :local:
     :depth: 2
 
-.. currentmodule:: blockchain_exchange.utils
+.. currentmodule:: bcx.utils
 
 Conversions
 ===========

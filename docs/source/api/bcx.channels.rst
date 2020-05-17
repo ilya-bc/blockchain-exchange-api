@@ -9,7 +9,7 @@ Module for interacting with exchange channels
 
 Available Channels
 ==================
-.. currentmodule:: blockchain_exchange.channels
+.. currentmodule:: bcx.channels
 
 .. autosummary::
     :nosignatures:
@@ -40,7 +40,7 @@ Channel Management
 
     ChannelFactory
 
-.. currentmodule:: blockchain_exchange.manager
+.. currentmodule:: bcx.manager
 
 .. autosummary::
     :nosignatures:

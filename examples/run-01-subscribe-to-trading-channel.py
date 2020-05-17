@@ -7,11 +7,11 @@ Subscribe to Trading Channel
     :local:
     :depth: 1
 """
-
 import time
 import logging
 from pprint import pprint
-from blockchain_exchange.client import BlockchainWebsocketClient
+
+from bcx.client import BlockchainWebsocketClient
 
 
 logging.basicConfig(level=logging.INFO)

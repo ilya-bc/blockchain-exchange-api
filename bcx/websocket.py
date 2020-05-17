@@ -22,6 +22,7 @@ class BlockchainWebsocket:
     def ws_uri(self) -> str:
         """URI of blockchain exchange websocket"""
         return "wss://ws.prod.blockchain.info/mercury-gateway/v1/ws"
+        # return "wss://ws.blockchain.com/mercury-gateway/v1/ws"
 
     @property
     def ws_origin(self) -> str:

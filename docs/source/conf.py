@@ -10,7 +10,7 @@
 import os
 import sys
 from datetime import datetime
-import blockchain_exchange
+import bcx
 
 
 # -- Path setup --------------------------------------------------------------
@@ -35,9 +35,9 @@ copyright = '2020 - {}, {}'.format(year, author)
 # built documents.
 #
 # The short X.Y version.
-version = blockchain_exchange.__version__
+version = bcx.__version__
 # The full version, including alpha/beta/rc tags.
-release = blockchain_exchange.__version__
+release = bcx.__version__
 
 
 # -- General configuration ---------------------------------------------------
@@ -156,9 +156,9 @@ try:
         'download_all_examples': False,              # Disable download button of all scripts at once
         'remove_config_comments': True,              # Remove the comments with file-by-file configs
         'reference_url': {
-            'blockchain_exchange': None,             # Add hyperlinks to the source code of used functions/classes to their matching online documentation
+            'bcx': None,             # Add hyperlinks to the source code of used functions/classes to their matching online documentation
         },
-        'doc_module': ('blockchain_exchange',)
+        'doc_module': ('bcx',)
     }
 except ModuleNotFoundError:
     pass
@@ -166,8 +166,8 @@ except ModuleNotFoundError:
 
 # -- Configuration for converting markdown files to rST and including them in docs
 # Usage: .. mdinclude:: path/to/markdown/file
-extensions.append('m2r.m2r')
-source_suffix.append('.md')
+# extensions.append('m2r.m2r')
+# source_suffix.append('.md')
 
 
 # -- Options for HTML output -------------------------------------------------

@@ -6,6 +6,13 @@
 
 SHELL = /bin/bash
 
+# Set context for execution of sphinx build
+PIPENV_EXISTS=$(shell which pipenv || echo 0 )
+ifeq ($(PIPENV_EXISTS), 0)
+    PYTHON = python3
+else
+    PYTHON = pipenv run python
+endif
 
 #################################################################################
 # INSTALL/SETUP COMMANDS                                                        #
@@ -21,7 +28,15 @@ install:
 install-dev:
 	pipenv --python 3.7
 	pipenv install -e '.[dev]'
+	pipenv install twine --dev
 
+## Build for PyPi
+build: clean clean-build
+	$(PYTHON) setup.py sdist bdist_wheel
+
+## Upload to PyPi Test server
+upload-test-pypi: build
+	$(PYTHON) -m twine upload --repository testpypi dist/*
 
 
 #################################################################################
@@ -56,6 +71,23 @@ clean-test:
 ## Remove all build, test, coverage and Python artifacts
 clean-all: clean clean-build clean-test
 
+
+#################################################################################
+# MISC                                                                          #
+#################################################################################
+.PHONY: update-readme-toc
+
+define README_TOC_TITLE
+Table of Contents
+-----------------
+Generated with [DocToc](https://github.com/thlorenz/doctoc)
+
+Last Update: $(shell date +%Y-%m-%d)
+endef
+export README_TOC_TITLE
+## Update table of contents for the main README. Requires 'doctoc' to be installed
+update-readme-toc:
+	doctoc --github --title "$${README_TOC_TITLE}" README.md
 
 
 #################################################################################

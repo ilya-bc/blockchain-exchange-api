@@ -58,7 +58,7 @@ All API is available though a websocket client:
 .. code-block:: python
 
     import logging
-    from blockchain_exchange.client import BlockchainWebsocketClient
+    from bcx.client import BlockchainWebsocketClient
 
     logging.basicConfig(level=logging.INFO)
 

@@ -7,7 +7,7 @@ VERSION_RE = re.compile(r'''__version__ = ['"]([0-9.]+)['"]''')
 
 
 def get_version():
-    init = open(os.path.join(HERE, 'blockchain_exchange', '__init__.py')).read()
+    init = open(os.path.join(HERE, 'bcx', '__init__.py')).read()
     return VERSION_RE.search(init).group(1)
 
 
@@ -47,7 +47,7 @@ def extras_requires():
 
 def do_setup():
     config = dict(
-        name='blockchain_exchange',
+        name='bcx',
         version=get_version(),
         packages=find_packages(exclude=['docs']),
         url='https://github.com/ilya-bc/blockchain-exchange-api',
@@ -56,6 +56,7 @@ def do_setup():
         author_email='support@blockchain.zendesk.com',
         description='Blockchain.com Exchange API',
         long_description=readme(),
+        long_description_content_type="text/markdown",
         classifiers=[
             'Development Status :: 3 - Alpha',
             "Intended Audience :: Developers",
@@ -68,6 +69,14 @@ def do_setup():
         keywords=[
             'blockchain.info',
             'blockchain',
+            'exchange',
+            'trading',
+            'market feed',
+            'market data',
+            'cryptocurrency',
+            'bitcoin',
+            'btc',
+            'eth',
             'websocket',
             'api',
         ],
