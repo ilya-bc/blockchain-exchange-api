@@ -28,7 +28,11 @@ client = BlockchainWebsocketClient()
 # Subscribe for monitoring
 # ========================
 # Subscription can happen on a fly, i.e. you don't need to restart client
-# (or re-run script) to be able to subscribe to new channels.
+# (or re-run script) to be able to subscribe to new channels. This quite
+# handy if you work in interactive environment, e.g. `Jupyter Lab
+# <https://jupyterlab.readthedocs.io/en/stable/>`_ (remember that all logged
+# information will be stored within a notebook itself, and there can be a lot
+# of messages depending on channel activity)
 client.subscribe_to_heartbeat()
 
 client.subscribe_to_prices("BTC-USD", granularity=60)
