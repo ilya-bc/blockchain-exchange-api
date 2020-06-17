@@ -1,6 +1,8 @@
 # [Blockchain Exchange Python API](https://exchange.blockchain.com/api)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://exchange.blockchain.com/)
 
+[![Downloads](https://pepy.tech/badge/bcx/month)](https://pepy.tech/project/bcx/month)
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 Table of Contents
